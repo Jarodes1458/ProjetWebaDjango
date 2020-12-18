@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 
@@ -11,13 +12,30 @@ class Coiffeur(models.Model):
 
 class Tranchehoraire(models.Model):
     coiffeur = models.ForeignKey(Coiffeur,on_delete=models.CASCADE)
-    tra_jour = models.CharField(max_length=100)
-    tra_heure_debut_matin = models.DateTimeField
-    tra_heure_fin_matin = models.DateTimeField
-    tra_heure_debut_aprem = models.DateTimeField
-    tra_heure_fin_aprem = models.DateTimeField
+    jour = models.CharField(max_length=100)
+    heure_debut_matin = models.DateTimeField()
+    heure_fin_matin = models.DateTimeField()
+    heure_debut_aprem = models.DateTimeField()
+    heure_fin_aprem = models.DateTimeField()
 
-class RendezVous(models.Model)
+class Periode(models.Model):
+    date = models.DateField()
+    heure_debut = models.DateTimeField()
+    heure_fin = models.DateTimeField()
+
+class RendezVous(models.Model):
+    client = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    coiffeur = models.ForeignKey(Coiffeur,on_delete=models.CASCADE)
+    rdv_prix = models.SmallIntegerField()
+    rdv_statut = models.BooleanField()
+    periodes = models.ManyToManyField(Periode)
+
+
+
+
+
+
+
 
 
 

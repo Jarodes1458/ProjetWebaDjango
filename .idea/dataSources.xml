@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="db" uuid="3a676f9e-206e-4603-815c-cc85ee591db8">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\ASSIAMUA_KOMIV-ESIG\PycharmProjects\Projet Weba Django\siteElysee\db.sqlite3</jdbc-url>
+    </data-source>
+  </component>
+</project>
